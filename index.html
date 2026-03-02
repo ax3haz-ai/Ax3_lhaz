@@ -3,192 +3,242 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Motos Seguras MX | Libertad con responsabilidad – Axel Haziel</title>
-  <meta name="description" content="Riesgos reales de las motos en México 2025-2026: estadísticas actualizadas de CDMX y consejos prácticos para rodar seguro."/>
+  <title>Motocicletas en México: Uso Seguro y Riesgos Reales 2025-2026</title>
+  <meta name="description" content="Información actualizada sobre riesgos de moto en México, estadísticas 2024-2026, causas principales y cómo protegerte."/>
   <style>
     :root {
-      --primary: #e63946;     /* rojo moto / alerta */
-      --dark: #1d3557;
-      --light: #f1faee;
-      --gray: #457b9d;
-      --accent: #a8dadc;
+      --primary: #c53030;
+      --dark: #1f2937;
+      --light: #f9fafb;
+      --warning: #d97706;
+      --success: #15803d;
     }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: system-ui, -apple-system, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--light);
-      color: var(--dark);
+      font-family: system-ui, sans-serif;
       line-height: 1.6;
+      color: #333;
+      background: var(--light);
     }
+
     header {
-      background: linear-gradient(to right, var(--dark), var(--gray));
+      background: linear-gradient(135deg, var(--primary), #991b1b);
       color: white;
       text-align: center;
-      padding: 3.5rem 1rem;
+      padding: 4rem 1rem 3rem;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.8rem;
-    }
-    header p {
-      font-size: 1.3rem;
-      opacity: 0.9;
-      margin-top: 0.5rem;
-    }
+
+    header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+    header p  { font-size: 1.35rem; max-width: 800px; margin: 0 auto; opacity: 0.95; }
+
     .container {
-      max-width: 920px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
+
     section {
       background: white;
-      margin: 2.5rem 0;
-      padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      padding: 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
     }
+
     h2 {
       color: var(--primary);
-      border-bottom: 4px solid var(--accent);
-      padding-bottom: 0.8rem;
-      margin-bottom: 1.2rem;
+      border-left: 7px solid var(--primary);
+      padding-left: 1.1rem;
+      margin: 2rem 0 1.3rem;
     }
-    ul {
-      padding-left: 1.5rem;
-    }
-    li {
-      margin: 0.9rem 0;
-      font-size: 1.05rem;
-    }
-    .stats {
-      background: var(--gray);
-      color: white;
-      padding: 1.8rem;
-      border-radius: 12px;
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
       margin: 1.8rem 0;
     }
-    .stats strong {
-      color: #ffd60a;
-      font-size: 1.5em;
-    }
-    .tips {
-      display: grid;
-      gap: 1.2rem;
-    }
-    .tip {
-      background: var(--accent);
+
+    .stat-card {
+      background: #fff5f5;
+      border-left: 6px solid var(--primary);
       padding: 1.4rem;
-      border-radius: 10px;
-      border-left: 8px solid var(--primary);
+      border-radius: 8px;
       font-weight: 500;
     }
+
+    .consejo {
+      background: #f0fdf4;
+      border-left: 6px solid var(--success);
+      padding: 1.4rem;
+      border-radius: 8px;
+      margin: 1.2rem 0;
+    }
+
+    .alert {
+      background: #fefce8;
+      border-left: 6px solid var(--warning);
+      padding: 1.4rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      color: #713f12;
+    }
+
+    ul.real-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.real-list li {
+      padding-left: 2rem;
+      position: relative;
+      margin: 0.9rem 0;
+    }
+
+    ul.real-list li::before {
+      content: "⚠️";
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+
+    ul.check-list li::before {
+      content: "✅";
+      position: absolute;
+      left: 0;
+    }
+
     footer {
-      background: var(--dark);
-      color: white;
       text-align: center;
       padding: 2.5rem 1rem;
+      color: #666;
+      font-size: 0.95rem;
+      border-top: 1px solid #ddd;
       margin-top: 4rem;
     }
-    a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 600px) {
+
+    @media (max-width: 768px) {
       header h1 { font-size: 2.3rem; }
-      section { padding: 1.6rem; }
+      .stats-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <h1>Las motos: libertad sobre dos ruedas…<br>pero con riesgos que NO debes ignorar</h1>
-      <p>Datos reales México 2025-2026 • CDMX y nacional • Por Axel Haziel, Villa Cuauhtémoc</p>
-    </div>
-  </header>
-
+<header>
   <div class="container">
-
-    <section>
-      <h2>¿Qué tan peligrosas son las motos en México hoy? (2025-2026)</h2>
-      <p>El boom de motos en CDMX y México es brutal: más economía, más trabajo (reparto), más libertad… pero también más accidentes y muertes. Las cifras de Semovi, SSC y reportes recientes no mienten.</p>
-
-      <div class="stats">
-        <p><strong>CDMX 2025 (enero-septiembre):</strong></p>
-        <ul>
-          <li><strong>155 motociclistas fallecidos</strong> — casi el 48% de todas las muertes viales (326 totales).</li>
-          <li>Motociclistas: el grupo más vulnerable, superando peatones (83 muertes).</li>
-          <li>Tendencia: representan \~45-50% de fallecidos viales en periodos recientes.</li>
-        </ul>
-
-        <p><strong>Valle de México / Nacional 2025-2026:</strong></p>
-        <ul>
-          <li>2025: año récord en muertes de motociclistas (crecimiento sostenido desde 2019).</li>
-          <li>Enero-febrero 2026: <strong>49 decesos</strong> (vs 38 en mismo periodo 2025) → +30% en tendencia acumulada.</li>
-          <li>Parque motero CDMX: creció +613% desde 2020 (de \~19k a 135k+ unidades con placas).</li>
-          <li>Accidentes moto CDMX: más del doble de 2020 a 2024 (heridos +117%, muertes +84% en algunos años).</li>
-        </ul>
-      </div>
-
-      <p>¿Por qué? Sin carrocería ni protección, cualquier impacto es directo al cuerpo. Y en calles saturadas, puntos ciegos y falta de cultura vial, el riesgo se multiplica.</p>
-    </section>
-
-    <section>
-      <h2>Riesgos más comunes en la calle (lo que más mata)</h2>
-      <ul>
-        <li><strong>Exceso de velocidad + imprudencia</strong>: factor #1 en choques y derrapes.</li>
-        <li><strong>Autos / camionetas que no ven la moto</strong>: giros izquierdos, cambios de carril, puertas abiertas, puntos ciegos.</li>
-        <li><strong>Sin casco o equipo adecuado</strong>: multiplica riesgo de muerte o lesión cerebral grave.</li>
-        <li><strong>Alcohol / fatiga (repartidores)</strong>: nocturno y fines de semana son los peores (62% de muertes en horario 18:00-06:00).</li>
-        <li><strong>Moto en mal estado</strong>: frenos, llantas, luces fallidas.</li>
-        <li><strong>Calles rotas / lluvia / grava</strong>: motos son muy sensibles.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Lesiones típicas (y por qué son tan graves)</h2>
-      <ul>
-        <li>Fracturas piernas/pies + “road rash” (raspadas profundas).</li>
-        <li>Roturas brazos/manos al impactar o frenar caída.</li>
-        <li>Trauma craneal severo (sin casco certificado).</li>
-        <li>Lesiones columna, órganos internos y hemorragias.</li>
-      </ul>
-      <p>En hospitales de CDMX, motociclistas ocupan gran parte de camas por siniestros viales graves. Hombres 18-45 años: el 83% de las víctimas.</p>
-    </section>
-
-    <section>
-      <h2>8 consejos prácticos para rodar más seguro (y seguir disfrutando la moto)</h2>
-      <div class="tips">
-        <div class="tip">1. <strong>Casco certificado siempre</strong> (DOT, ECE o NOM-206). Que ajuste bien y cubra cara.</div>
-        <div class="tip">2. <strong>Equipo completo</strong>: chaqueta con protecciones, guantes, pantalón anti-abrasión, botas altas.</div>
-        <div class="tip">3. <strong>Maneja a la defensiva</strong>: asume que NUNCA te vieron. Anticipa giros, puertas, cambios de carril.</div>
-        <div class="tip">4. <strong>Velocidad controlada</strong>: reduce en lluvia, curvas, tráfico, nocturno.</div>
-        <div class="tip">5. <strong>Cero alcohol/drogas/fatiga</strong>. Tus reflejos son lo único que te separa de un hospital.</div>
-        <div class="tip">6. <strong>Revisa moto antes de salir</strong>: luces, frenos, llantas, cadena, aceite — 5-10 min salvan vidas.</div>
-        <div class="tip">7. <strong>Curso de manejo moto</strong>: básico o avanzado. Cambia tu forma de ver el tráfico.</div>
-        <div class="tip">8. <strong>Sé visible</strong>: luces siempre ON, ropa reflectante, evita puntos ciegos de autos grandes.</div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Conclusión: la moto es pasión, pero la vida va primero</h2>
-      <p>Andar en moto en México es libertad pura, pero el aumento de muertes (163% en algunos periodos recientes) nos obliga a ser más responsables. Usa equipo, maneja con cabeza, capacítate y revisa tu moto. Así reduces el riesgo drásticamente y sigues rodando muchos años.</p>
-      <p>¿Tienes una anécdota de la calle o un tip que te ha salvado? Compártelo cuando lo subas a redes o blog. ¡Y pásalo a ese carnal que anda sin casco!</p>
-      <p>🏍️ ¡Nos vemos en la ruta, pero siempre enteros! 🚀</p>
-    </section>
-
+    <h1>Motocicletas en México</h1>
+    <p>Libertad sobre dos ruedas… pero el vehículo más letal en nuestras calles (2025-2026)</p>
   </div>
+</header>
 
-  <footer>
-    <p>Blog creado por Axel Haziel • Villa Cuauhtémoc, México • Marzo 2026</p>
-    <p>Datos basados en Semovi CDMX (reportes trimestrales 2025), SSC, Reforma, Proceso, La Silla Rota y tendencias 2025-2026</p>
-  </footer>
+<div class="container">
+
+  <section>
+    <h2>Realidad 2025-2026 en México y Zona Metropolitana</h2>
+    
+    <div class="stats-grid">
+      <div class="stat-card">
+        <strong>CDMX 2025 (ene-sep):</strong><br>
+        \~47-50% de muertes viales = motociclistas (155-186 fallecidos en periodos reportados)
+      </div>
+      <div class="stat-card">
+        <strong>Valle de México:</strong><br>
+        Muertes ↑30.5% (2022→2025). 269 fallecidos en 2025
+      </div>
+      <div class="stat-card">
+        <strong>Nacional tendencia:</strong><br>
+        Motociclistas \~40-47% de víctimas fatales en grandes ciudades
+      </div>
+      <div class="stat-card">
+        <strong>Crecimiento motos:</strong><br>
+        +1 millón de unidades 2020-2024 solo en CDMX + Edomex
+      </div>
+    </div>
+
+    <div class="alert">
+      <strong>En resumen:</strong> Las muertes por moto crecen más rápido que el parque vehicular. En CDMX y Edomex ya superan al resto de usuarios viales juntos en muchos periodos.
+    </div>
+  </section>
+
+  <section>
+    <h2>Principales causas de accidentes fatales (México 2024-2025)</h2>
+    
+    <ul class="real-list">
+      <li>Exceso de velocidad / alta velocidad inadecuada</li>
+      <li>Distracción del conductor (teléfono, etc.)</li>
+      <li>Invadir carril o no guardar distancia</li>
+      <li>No respetar señal de alto / preferencia</li>
+      <li>Conducir en estado de ebriedad o drogas</li>
+      <li>No usar casco o usar casco no certificado</li>
+      <li>Vehículos que no ven a la moto (giro izquierda principalmente)</li>
+      <li>Falta de licencia / capacitación (solo \~9% con licencia oficial)</li>
+      <li>Mal estado mecánico (frenos, llantas, luces)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Equipo de protección que SÍ salva vidas</h2>
+    
+    <div class="consejo">
+      <strong>Casco certificado</strong> → ECE 22.05/22.06, DOT o SNELL (reduce riesgo muerte \~39% y lesiones graves \~72%)
+    </div>
+    <div class="consejo">
+      <strong>Guantes con protección</strong> → nudillos y palma reforzados
+    </div>
+    <div class="consejo">
+      <strong>Chaqueta con protecciones CE</strong> → codos, hombros, espalda (nivel 1 o 2)
+    </div>
+    <div class="consejo">
+      <strong>Pantalón reforzado o con rodilleras</strong> → kevlar o armadura externa
+    </div>
+    <div class="consejo">
+      <strong>Botas por encima del tobillo</strong> → suela antideslizante y puntera reforzada
+    </div>
+
+    <p style="margin-top:1.5rem; font-style:italic; color:#555;">
+      En México el uso de casco ronda 80-92% en grandes ciudades… pero muchos son de baja calidad o mal puestos.
+    </p>
+  </section>
+
+  <section>
+    <h2>Reglas de supervivencia diaria en moto (México 2026)</h2>
+    
+    <div class="alert">
+      Asume que <strong>nadie te ve</strong>. Conduce como si fueras invisible todo el tiempo.
+    </div>
+
+    <ul class="check-list" style="padding-left:0; list-style:none;">
+      <li>Mantente fuera de puntos ciegos de autos y camiones</li>
+      <li>Usa luces altas de día (no solo luces de cortesía)</li>
+      <li>Anticipa giros a la izquierda de autos (la causa #1 de choques moto-auto)</li>
+      <li>NUNCA filtrar a más de 30-40 km/h de diferencia con el tráfico</li>
+      <li>Evita viernes/sábado noche después de 10 pm (alcohol ↑)</li>
+      <li>Revisa frenos, llantas y cadena cada 1,000-1,500 km</li>
+      <li>Si puedes: toma curso de manejo seguro (muy pocos lo tienen)</li>
+    </ul>
+  </section>
+
+  <section style="text-align:center; padding: 2.5rem 1rem; background:#f8f9fa; border-radius:12px;">
+    <h2 style="color:#444;">Reflexión final</h2>
+    <p style="font-size:1.25rem; color:#444; max-width:800px; margin:1.5rem auto;">
+      La moto no es peligrosa por naturaleza.<br>
+      <strong>Se vuelve mortal cuando el piloto (o los demás conductores) toman decisiones de riesgo.</strong>
+    </p>
+    <p style="color:#555; margin-top:1.5rem;">
+      Usa casco certificado • Respeta límites • Capacítate • Llega vivo a casa.
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  <p>Información educativa basada en datos públicos (INEGI, Semovi, Reforma, AMTM, OMS) • Marzo 2026</p>
+  <p style="margin-top:1rem; font-size:0.9rem;">
+    Hecho con responsabilidad • Axel Haziel • Toluca, México
+  </p>
+</footer>
 
 </body>
-  </html>
+        </html>
